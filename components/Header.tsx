@@ -5,17 +5,15 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
     NavigationMenu,
-    NavigationMenuContent,
+
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
-    navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu';
 
 import {cn} from "@/lib/utils";
 import {Menu, X} from "lucide-react";
-import {getSignInRedirectPath} from "@/lib/futils";
+import {getSignInRedirectPath, getWaitlistURL} from "@/lib/futils";
 import IconWithWords from "@/components/ui/icon/icon-with-words";
 import ButtonGithubStars from "@/components/landing_page/github-button";
 
@@ -138,7 +136,7 @@ export default function Header() {
                                 <NavigationMenuItem className='hidden md:flex lg:flex'>
                                     <Button variant='secondary' className='rounded-3xl border-none font-sans text-lg'>
                                         {/*getSignInRedirectPath()*/}
-                                        <Link className='font-semibold text-black' href={'/app/waitlist'}>
+                                        <Link className='font-semibold text-black' href={getWaitlistURL()}>
                                             Join the Waitlist
                                         </Link>
                                     </Button>

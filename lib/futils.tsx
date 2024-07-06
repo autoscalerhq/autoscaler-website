@@ -19,3 +19,12 @@ export function getSignInRedirectPath(callbackUrl?: string): string {
 
     return '/app/auth/signin';
 }
+
+export function getWaitlistURL(utm?: string): string {
+
+    if (utm) {
+        return `https://getwaitlist.com/waitlist/18230?utm_campagin=${utm}`
+    }
+
+    return `https://getwaitlist.com/waitlist/18230`
+}

@@ -1,12 +1,12 @@
 "use client";
 import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
-import {Button} from "@/components/ui/button";
 import React from "react";
-import {HoverBorderGradient} from "@/components/ui/hover-border-gradient";
 import {useViewportSize} from "@mantine/hooks";
+import Link from "next/link";
+import {getWaitlistURL} from "@/lib/futils";
 export function CTA() {
 
-    const { height, width } = useViewportSize();
+    const {  width } = useViewportSize();
 
     const words = [
         {
@@ -51,12 +51,12 @@ export function CTA() {
                         </h3>               }
 
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 pt-1">
-                    <button className="relative inline-flex sm:h-16 md:h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                    <Link className="relative inline-flex sm:h-16 md:h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50" href={getWaitlistURL()}>
                         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#75C8A4_0%,#EAB34E_50%,#E35F2D_100%)]"/>
                         <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
                             Join the Waitlist
                         </span>
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

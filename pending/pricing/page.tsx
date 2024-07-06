@@ -7,6 +7,7 @@ import React, {useState} from 'react';
 import {Button} from '@/components/ui/button';
 import {cn} from "@/lib/utils";
 import ComparePlansCards from "@/components/pricing/ComparePlan";
+import {getWaitlistURL} from "@/lib/futils";
 
 
 Pricing.requireSession = false;
@@ -133,7 +134,7 @@ export default function Pricing() {
                                     type='button'
                                     onClick={() => {
                                         // getSignInRedirectPath()
-                                        void router.push(price === -1 ? '/app/waitlist' : 'https://meetings.hubspot.com/zclifton/csgrader-demo');
+                                        void router.push(price === -1 ? getWaitlistURL() : 'https://meetings.hubspot.com/zclifton/csgrader-demo');
                                     }}
                                     className={
                                         'relative mt-8 inline-flex h-12 w-full overflow-hidden rounded-full p-[1px] text-center font-semibold focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50'
