@@ -4,6 +4,7 @@ import Icon from "@/components/ui/icon/icon";
 import {GeistSans} from 'geist/font/sans';
 import {GeistMono} from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/react';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export default function RootLayout(props: Readonly<{
     children: React.ReactNode; seoTitle?: string; seoDescription?: string; withContainer?: boolean;
@@ -25,6 +26,7 @@ export default function RootLayout(props: Readonly<{
                         </footer>
                     </main>
                     <Analytics />
+                    <GoogleAnalytics gaId="G-4HH4XBE2YZ" />
                 </body>
             </html>
         </>
