@@ -13,7 +13,7 @@ import {
 
 import {cn} from "@/lib/utils";
 import {Menu, X} from "lucide-react";
-import {getSignInRedirectPath, getWaitlistURL} from "@/lib/futils";
+import {getWaitlistURL} from "@/lib/futils";
 import IconWithWords from "@/components/ui/icon/icon-with-words";
 import ButtonGithubStars from "@/components/landing_page/github-button";
 
@@ -164,7 +164,7 @@ export default function Header() {
                         <Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href='https://github.com/autoscalerhq/Autoscaler'>
                             Github
                         </Link>
-                        <Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href='/pricing'>
+                        <Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href={getWaitlistURL()}>
                         Join Waitlist
                         </Link>
                         {/*<Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href='/pricing'>*/}
