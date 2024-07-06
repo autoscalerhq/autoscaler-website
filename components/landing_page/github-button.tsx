@@ -6,6 +6,7 @@ import {cn} from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import {Separator} from "@/components/ui/separator";
+import {emitAnalytic} from "@/lib/futils";
 
 interface ButtonGithubStarsProps {
     className?: string;
@@ -26,7 +27,10 @@ export default function ButtonGithubStars(props: ButtonGithubStarsProps) {
         });
 
     return (
-        <Button className={cn('border border-white bg-black', props.className)} >
+        <Button
+            className={cn('border border-white bg-black', props.className)}
+            onClick={() => { emitAnalytic({ name: "Github", value: "Header"}) }}
+        >
             <Link
                 href={url}
                 target="_blank"
