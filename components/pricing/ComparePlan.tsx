@@ -60,7 +60,6 @@ export default function ComparePlansCards({ activeTier }: ComparePlansCardsProps
                                         return (
                                             <li className={clsx(s['compareplans-items'], isActive)} data-row-id={`${item}-${index}`} key={index} style={item === 'support' ? { minHeight: 140 } : {}}>
                                                 {
-                                                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                                                     // @ts-ignore
                                                     items[item]
                                                 }
