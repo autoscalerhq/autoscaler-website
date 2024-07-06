@@ -1,5 +1,9 @@
+"use client"
 import Link from 'next/link';
 import React from 'react';
+
+import { sendGTMEvent } from '@next/third-parties/google';
+import { track } from '@vercel/analytics';
 
 type LandingPageLinkProps = React.ComponentProps<typeof Link>;
 
@@ -27,4 +31,18 @@ export function getWaitlistURL(utm?: string): string {
     }
 
     return `https://getwaitlist.com/waitlist/18230`
+}
+
+export function emitAnalytic(action: {
+    name: string;
+    value: string;
+    data?: Record<string, any>;
+}) {
+
+
+
+    sendGTMEvent({ event: action.name, value: action.value, gtm: action.data });
+
+    track(action.name, action.data);
+
 }

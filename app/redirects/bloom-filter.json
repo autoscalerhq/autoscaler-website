@@ -1,0 +1,8 @@
+{
+  "/github": {
+    "destination": "/new",
+    "permanent": true,
+    "analytics": true,
+    "external": true
+  }
+}

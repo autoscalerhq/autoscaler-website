@@ -4,14 +4,18 @@ import Icon from "@/components/ui/icon/icon";
 import {GeistSans} from 'geist/font/sans';
 import {GeistMono} from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/react';
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 export default function RootLayout(props: Readonly<{
-    children: React.ReactNode; seoTitle?: string; seoDescription?: string; withContainer?: boolean;
+    children: React.ReactNode;
 }>) {
+
+    const gcode: string = "G-4HH4XBE2YZ"
+
     return (
         <>
             <html className={`bg-black text-white ${GeistSans.variable} ${GeistMono.variable}`}>
+                <GoogleTagManager gtmId={gcode} />
                 <body className={'mx-auto overflow-auto h-screen'}>
                     <Header/>
                     <main className=" w-full bg-black flex h-screen flex-col items-center justify-between p-24">
@@ -26,7 +30,7 @@ export default function RootLayout(props: Readonly<{
                         </footer>
                     </main>
                     <Analytics />
-                    <GoogleAnalytics gaId="G-4HH4XBE2YZ" />
+                    <GoogleAnalytics gaId={gcode} />
                 </body>
             </html>
         </>
