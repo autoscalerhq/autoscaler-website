@@ -16,7 +16,8 @@ import {
 import {cn} from "@/lib/utils";
 import {Menu, X} from "lucide-react";
 import {getSignInRedirectPath} from "@/lib/futils";
-import Icon from "@/components/ui/icon/icon";
+import IconWithWords from "@/components/ui/icon/icon-with-words";
+import ButtonGithubStars from "@/components/landing_page/github-button";
 
 export default function Header() {
     const roadmapURL = 'https://csgrader.productlane.com/roadmap';
@@ -67,7 +68,9 @@ export default function Header() {
             {/*className='flex justify-between px-10 py-3 sm:px-4 sm:py-3.5 md:flex-row md:px-7 md:py-4 lg:flex-row'*/}
             <nav className={'grow flex  justify-between border-b border-[#727DA1]/15 mx-5 max-w-[1110px] h-[52px] text-[13px] leading-[100%] text-[#C9D3EE]'}>
                 <div className='flex items-center '>
-                    <Icon ClassName={'hidden md:block z-50 '} withLink={true} />
+
+                    <IconWithWords textClassName={'hidden md:block z-50 text-white'} imageClassName={'h-24 w-24'} withLink={true} />
+
                     <div className='hidden pl-10 gap-4 lg:flex '>
                         <NavigationMenu>
                             <NavigationMenuList className={'space-x-4'}>
@@ -109,11 +112,7 @@ export default function Header() {
                                 {/*    </NavigationMenuContent>*/}
                                 {/*</NavigationMenuItem>*/}
 
-                                {/*<NavigationMenuItem>*/}
-                                {/*    <NavigationMenuLink className={navigationMenuTriggerStyle() + ' bg-transparent'} href='/pricing'>*/}
-                                {/*        Pricing*/}
-                                {/*    </NavigationMenuLink>*/}
-                                {/*</NavigationMenuItem>*/}
+
                             </NavigationMenuList>
                         </NavigationMenu>
                     </div>
@@ -123,13 +122,18 @@ export default function Header() {
                     <div className='pl-auto hidden items-center justify-end lg:flex'>
                         <NavigationMenu>
                             <NavigationMenuList className={'space-x-4'}>
-                                <NavigationMenuItem className='flex md:flex lg:flex'>
-                                    <Button variant='ghost' className='rounded-3xl border-none font-sans text-lg'>
-                                        <Link className='font-semibold text-white' href={getSignInRedirectPath()}>
-                                            Sign In
-                                        </Link>
-                                    </Button>
+                                {/*<NavigationMenuItem className='flex md:flex lg:flex'>*/}
+                                {/*    <Button variant='ghost' className='rounded-3xl border-none font-sans text-lg'>*/}
+                                {/*        <Link className='font-semibold text-white' href={getSignInRedirectPath()}>*/}
+                                {/*            Sign In*/}
+                                {/*        </Link>*/}
+                                {/*    </Button>*/}
+                                {/*</NavigationMenuItem>*/}
+
+                                <NavigationMenuItem>
+                                   <ButtonGithubStars/>
                                 </NavigationMenuItem>
+
 
                                 <NavigationMenuItem className='hidden md:flex lg:flex'>
                                     <Button variant='secondary' className='rounded-3xl border-none font-sans text-lg'>
@@ -150,25 +154,33 @@ export default function Header() {
                                 setIsOpen(!isOpen);
                             }}
                         >
-                            {isOpen ? <X className={'block lg:hidden w-6 h-6 '} /> : <Menu className={'block lg:hidden w-6 h-6 '} />}
+                            {isOpen ? <X className={'block lg:hidden w-6 h-6 '}/> :
+                                <Menu className={'block lg:hidden w-6 h-6 '}/>}
                         </Button>
                     </div>
                 </div>
 
                 {isOpen ? (
-                    <div className='lg:hidden flex flex-col items-center sm:text-xl md:text-2xl mt-2 p-5 fixed z-40 left-0 right-0 backdrop-blur-2xl top-[52px] bg-[#181926]/80 text-[#C9D3EE]'>
+                    <div
+                        className='lg:hidden flex flex-col items-center sm:text-xl md:text-2xl mt-2 p-5 fixed z-40 left-0 right-0 backdrop-blur-2xl top-[52px] bg-[#181926]/80 text-[#C9D3EE]'>
+                        <Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href='https://github.com/autoscalerhq/Autoscaler'>
+                            Github
+                        </Link>
                         <Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href='/pricing'>
-                            Pricing
+                        Join Waitlist
                         </Link>
-                        <Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href='/blog'>
-                            Blog
-                        </Link>
-                        <Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href={changelogURL}>
-                            Changelog
-                        </Link>
-                        <Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href={roadmapURL}>
-                            Roadmap
-                        </Link>
+                        {/*<Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href='/pricing'>*/}
+                        {/*    Pricing*/}
+                        {/*</Link>*/}
+                        {/*<Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href='/blog'>*/}
+                        {/*    Blog*/}
+                        {/*</Link>*/}
+                        {/*<Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href={changelogURL}>*/}
+                        {/*    Changelog*/}
+                        {/*</Link>*/}
+                        {/*<Link className='p-3 py-5 w-full flex flex-row items-center justify-center' href={roadmapURL}>*/}
+                        {/*    Roadmap*/}
+                        {/*</Link>*/}
                     </div>
                 ) : (
                     <></>
