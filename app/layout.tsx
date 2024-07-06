@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Icon from "@/components/ui/icon/icon";
 import {GeistSans} from 'geist/font/sans';
 import {GeistMono} from 'geist/font/mono'
+import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout(props: Readonly<{
     children: React.ReactNode; seoTitle?: string; seoDescription?: string; withContainer?: boolean;
@@ -23,6 +24,7 @@ export default function RootLayout(props: Readonly<{
                                 Development, LLC</p>
                         </footer>
                     </main>
+                    <Analytics />
                 </body>
             </html>
         </>
