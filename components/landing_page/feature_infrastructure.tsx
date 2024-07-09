@@ -26,7 +26,7 @@ export function FeatureInfrastructure() {
                             Autoscaler offers a straightforward setup process, allowing you to integrate it with your application seamlessly within minutes.
                         </p>
                     </div>
-                    <Cable  className="w-3/4 h-full absolute text-gray-300 -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl" />
+                    {/*<Cable  className="w-3/4 h-full absolute text-gray-300 -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl" />*/}
                 </WobbleCard>
                 <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-transparent">
                     <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
