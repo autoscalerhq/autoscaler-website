@@ -7,9 +7,16 @@ import BeamWrapper from "@/components/landing_page/beam-wrapper";
 import { type Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Autoscaler ',
-    description: 'Scale & Right-Size your Services',
-}
+    title: 'Autoscaler | Efficiently Scale & Right-Size Your Services',
+    description: 'Autoscaler helps you efficiently scale and right-size your services to optimize performance and reduce costs. Learn more about our advanced scaling solutions.',
+    keywords: 'autoscaler, scale services, right-size services, optimize performance, reduce costs, scaling solutions',
+    openGraph: {
+        type: 'website',
+        description: 'test',
+        url: 'https://autoscaler.dev',
+        images: 'https://autoscaler.dev/images/autoscaler_icon.svg'
+    },
+};
 
 export default function Home() {
     return (
