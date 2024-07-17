@@ -1,9 +1,8 @@
 import { MetadataRoute } from 'next'
-import {useRouter} from "next/router";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const router = useRouter();
-    const url = router.asPath;
+
+    const url = 'https://autoscaler.dev';
 
     return [
         {

@@ -1,10 +1,8 @@
 import { MetadataRoute } from 'next'
-import {useRouter} from "next/router";
 
 export default function robots(): MetadataRoute.Robots {
 
-    const router = useRouter();
-    const url = router.asPath;
+    const url = 'https://autoscaler.dev';
 
     return {
         rules: {
