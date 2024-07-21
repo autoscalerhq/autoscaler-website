@@ -16,6 +16,7 @@ export const metadata: Metadata = {
         url: 'https://autoscaler.dev',
         images: 'https://autoscaler.dev/images/autoscaler_icon.svg'
     },
+
 };
 
 export default function Home() {

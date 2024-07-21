@@ -14,7 +14,7 @@ export default function RootLayout(props: Readonly<{
 
     return (
         <>
-            <html className={`bg-black text-white ${GeistSans.variable} ${GeistMono.variable}`}>
+            <html lang="en" className={`bg-black text-white ${GeistSans.variable} ${GeistMono.variable}`}>
                 <GoogleTagManager gtmId={gcode} />
                 <body className={'mx-auto overflow-auto h-screen'}>
                     <Header/>
