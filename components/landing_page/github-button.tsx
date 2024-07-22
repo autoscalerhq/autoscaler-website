@@ -15,7 +15,7 @@ interface ButtonGithubStarsProps {
 export default function ButtonGithubStars(props: ButtonGithubStarsProps) {
 
     let count = 0;
-    let url = ""
+    let url = "https://github.com/autoscalerhq/Autoscaler"
 
     fetch('https://api.github.com/repos/novuhq/novu')
         .then(response => response.json())
