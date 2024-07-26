@@ -4,6 +4,7 @@ import React from 'react';
 
 import { sendGTMEvent } from '@next/third-parties/google';
 import { track } from '@vercel/analytics';
+import posthog from "posthog-js";
 
 type LandingPageLinkProps = React.ComponentProps<typeof Link>;
 
@@ -39,10 +40,14 @@ export function emitAnalytic(action: {
     data?: Record<string, any>;
 }) {
 
-
-
     sendGTMEvent({ event: action.name, value: action.value, gtm: action.data });
 
     track(action.name, action.data);
+
+    posthog.capture(action.name, {
+        value: action.value,
+        ...action.data,
+    }  )
+
 
 }
