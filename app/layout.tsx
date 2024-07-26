@@ -5,6 +5,7 @@ import {GeistSans} from 'geist/font/sans';
 import {GeistMono} from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import {CSPostHogProvider} from "@/app/providers";
 
 export default function RootLayout(props: Readonly<{
     children: React.ReactNode;
@@ -16,22 +17,24 @@ export default function RootLayout(props: Readonly<{
         <>
             <html lang="en" className={`bg-black text-white ${GeistSans.variable} ${GeistMono.variable}`}>
                 <GoogleTagManager gtmId={gcode} />
-                <body className={'mx-auto overflow-auto h-screen'}>
-                    <Header/>
-                    <main className=" w-full bg-black flex h-screen flex-col items-center justify-between p-24">
-                        {props.children}
+                <CSPostHogProvider>
+                    <body className={'mx-auto overflow-auto h-screen'}>
+                        <Header/>
+                        <main className=" w-full bg-black flex h-screen flex-col items-center justify-between p-24">
+                            {props.children}
 
-                        <footer className='flex flex-col pt-5 sm:pb-4 md:pb-32 '>
-                            <div className='mb-3 mt-16 flex justify-center'>
-                                <Icon/>
-                            </div>
-                            <p className='flex justify-center text-sm/[15px] font-semibold text-white text-center'>@2023 Bear Binary
-                                Development, LLC</p>
-                        </footer>
-                    </main>
-                    <Analytics />
-                    <GoogleAnalytics gaId={gcode} />
-                </body>
+                            <footer className='flex flex-col pt-5 sm:pb-4 md:pb-32 '>
+                                <div className='mb-3 mt-16 flex justify-center'>
+                                    <Icon/>
+                                </div>
+                                <p className='flex justify-center text-sm/[15px] font-semibold text-white text-center'>@2023 Bear Binary
+                                    Development, LLC</p>
+                            </footer>
+                        </main>
+                        <Analytics />
+                        <GoogleAnalytics gaId={gcode} />
+                    </body>
+                </CSPostHogProvider>
             </html>
         </>
 );

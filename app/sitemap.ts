@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: url + 'terms',
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 0.1,
         },
     ]

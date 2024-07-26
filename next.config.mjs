@@ -1,24 +1,25 @@
-
-import nextMDX from '@next/mdx';
-import remarkGfm from 'remark-gfm'
-
-const withMDX = nextMDX({
-    extension: /\.(md|mdx)$/,
-    options: {
-        remarkPlugins: [remarkGfm],
-        rehypePlugins: [],
-        providerImportSource: "@mdx-js/react"
-    },
-    experimental: {
-        mdxRs: true,
-    },
-});
+/**
+ * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
+ * for Docker builds.
+ */
+await import("./app/env.js");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Configure `pageExtensions` to include MDX files
-    pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-    // Optionally, add any other Next.js config below
+    async rewrites() {
+        return [
+            {
+                source: "/ingest/static/:path*",
+                destination: "https://us-assets.i.posthog.com/static/:path*",
+            },
+            {
+                source: "/ingest/:path*",
+                destination: "https://us.i.posthog.com/:path*",
+            },
+        ];
+    },
+    // This is required to support PostHog trailing slash API requests
+    skipTrailingSlashRedirect: true,
 };
 
-export default withMDX(nextConfig);
+export default nextConfig;
