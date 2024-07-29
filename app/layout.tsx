@@ -6,6 +6,7 @@ import {GeistMono} from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import {CSPostHogProvider} from "@/app/providers";
+import Script from 'next/script'
 
 export default function RootLayout(props: Readonly<{
     children: React.ReactNode;
@@ -16,6 +17,8 @@ export default function RootLayout(props: Readonly<{
     return (
         <>
             <html lang="en" className={`bg-black text-white ${GeistSans.variable} ${GeistMono.variable}`}>
+                <Script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/45292712.js"></Script>
+
                 <GoogleTagManager gtmId={gcode} />
                 <CSPostHogProvider>
                     <body className={'mx-auto overflow-auto h-screen'}>
@@ -35,6 +38,7 @@ export default function RootLayout(props: Readonly<{
                         <GoogleAnalytics gaId={gcode} />
                     </body>
                 </CSPostHogProvider>
+
             </html>
         </>
 );
