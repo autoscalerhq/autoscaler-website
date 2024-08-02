@@ -128,9 +128,9 @@ export default function Header() {
                                 {/*    </Button>*/}
                                 {/*</NavigationMenuItem>*/}
 
-                                <NavigationMenuItem>
-                                   <ButtonGithubStars/>
-                                </NavigationMenuItem>
+                                {/*<NavigationMenuItem>*/}
+                                {/*   <ButtonGithubStars/>*/}
+                                {/*</NavigationMenuItem>*/}
 
 
                                 <NavigationMenuItem className='hidden md:flex lg:flex'>
