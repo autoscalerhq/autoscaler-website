@@ -5,8 +5,9 @@ import {GeistSans} from 'geist/font/sans';
 import {GeistMono} from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
-import {CSPostHogProvider} from "@/app/providers";
+import PostHogPageView, {CSPostHogProvider} from "@/app/providers";
 import Script from 'next/script'
+import React from "react";
 
 export default function RootLayout(props: Readonly<{
     children: React.ReactNode;
@@ -22,6 +23,7 @@ export default function RootLayout(props: Readonly<{
                 <GoogleTagManager gtmId={gcode} />
                 <CSPostHogProvider>
                     <body className={'mx-auto overflow-auto h-screen'}>
+                        <PostHogPageView/>
                         <Header/>
                         <main className=" w-full bg-black flex h-screen flex-col items-center justify-between p-24">
                             {props.children}
