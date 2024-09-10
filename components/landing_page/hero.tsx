@@ -7,7 +7,7 @@ import {GridBackground} from "@/components/ui/grid-background/grid-background";
 
 export default function Hero() {
 
-    const words = ["Smarter", "Faster", "Cheaper", "Better"];
+    // const words = ["Smarter", "Faster", "Cheaper", "Better"];
 
     return (
         <section>
@@ -30,7 +30,7 @@ export default function Hero() {
                         }}
                         className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
                     >
-                        <p> With Autoscaler, Right Sizing Your System Becomes Easy.</p>
+                        <p> With Autoscaler, Right Sizing Your SAAS Becomes Easy</p>
                         <br/>
                         <Highlight className="text-white bg-gradient-to-r from-yellow-300 to-green-300 ">
                             Cut Your Spend as You Scale
