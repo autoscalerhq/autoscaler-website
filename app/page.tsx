@@ -12,9 +12,14 @@ export const metadata: Metadata = {
     keywords: 'autoscaler, scale services, right-size services, optimize performance, reduce costs, scaling solutions',
     openGraph: {
         type: 'website',
-        description: 'test',
+        description: 'Right Sizing Your SAAS Becomes Easy with Autoscaler',
         url: 'https://autoscaler.dev',
-        images: 'https://autoscaler.dev/images/autoscaler_icon.svg'
+        images: [
+            {
+                url: 'https://autoscaler.dev/images/autoscaler_icon.svg',
+                alt: 'Autoscaler Icon'
+            }
+        ]
     },
 
 };
